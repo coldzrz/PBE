@@ -1,0 +1,40 @@
+#!/bin/bash
+#echo "Enter name of files"
+#read name
+#mkdir $name
+for i in $(seq 1 10 180);
+#for i in $(seq 0.01 0.01 0.1);
+#for i in $(seq 1000 500 4000);
+#for i in $(seq 100 2 120);
+#for i in $(seq 15 1 30);
+do
+
+mkdir $name/$i;
+#cp ../sbatch $name/$i;
+#cp ~/source/myprog $name/$i;
+#cp ~/source/PBEparameters.dat $name/$i;
+sed -i "s/angle :.*/angle : `echo $i`;/g" ./PBEparameters.dat;
+./myprog;
+#sed -i "s/nx : 1000/nx : `echo $i`/g" $name/$i/PBEparameters.dat
+#sed -i "s/nx : 2000/nx : `echo $((20*$i))`/g" $name/$i/PBEparameters.dat
+#sed -i "s/endx : 100/endx : `echo $i`/g" $name/$i/PBEparameters.dat
+#sed -i "s/endy : 100/endy : `echo $i`/g" $name/$i/PBEparameters.dat
+#sed -i "s/radius : 15/radius : `echo $i`/g" $name/$i/PBEparameters.dat
+#sed -i "s/pthickness : 0.01/pthickness : `echo $i`/g" $name/$i/PBEparameters.dat
+#sed -i "s/nx : 1000/nx : `echo $((1*$i))`/g" $name/$i/PBEparameters.dat
+#sed -i "s/ny : 2000/ny : `echo $((2*$i))`/g" $name/$i/PBEparameters.dat
+#sed -i "s/sig : 1.0/sig : `echo $i`/g" $name/$i/PBEparameters.dat
+done
+
+#mkdir $name/np
+#cp ~/source/myprog $name/np;
+#cp ../sbatch $name/np;
+#cp ~/source/PBEparameters.dat $name/np;
+#sed -i "s/isMem : 1/isMem : 0/g" $name/np/PBEparameters.dat;
+#mkdir $name/mem
+#cp ~/source/myprog $name/mem;
+#cp ../sbatch $name/mem;
+#cp ~/source/PBEparameters.dat $name/mem;
+#sed -i "s/isNP : 1/isNP : 0/g" $name/mem/PBEparameters.dat;
+
+#for i in $(seq 3 4 180); do sed -i "s/angle : 120/angle : `echo $i`/g" $name/$i/PBEparameters.dat ; done

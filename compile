@@ -1,0 +1,22 @@
+#!/bin/bash
+clear;
+##Compile the C code
+compile=icc
+#remove old myprog and old data files
+today=`date +%Y-%m-%d.%H.%M.%S`;
+rm myprog 2>/dev/null
+mv datafiles datafiles"."$today 2>/dev/null
+find . -maxdepth 1 -type f -not -name ".gitattributes" -not -name "*.cpp"  -not -name "*.h" -not -name "run" -not -name "compile" -not -name "README.md" -not -name "LICENSE" -not -name "PBEparameters*" |xargs -r rm 2>/dev/null
+$compile -O3 -I ./eigen -c -o fd2d.o fd2d.cpp
+$compile -O3 -c -o functions.o functions.cpp
+$compile -O3 -c -o sidefunctions.o sidefunctions.cpp
+$compile -I ./eigen -c -o main.o  main.cpp
+$compile -O3 -c -o rk4.o rk4.cpp
+$compile -O3 -I ./eigen/Eigen -o myprog main.o fd2d.o functions.o sidefunctions.o rk4.o -lm
+rm *.o
+#export OMP_NUM_THREADS=12
+#time ./myprog # >output
+#gprof myprog
+#gnuplot *.gp
+#rm myprog 2>/dev/null
+#time ./myprog

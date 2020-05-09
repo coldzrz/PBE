@@ -1,0 +1,71 @@
+nx : 400;      \\number of grid points on x-axis
+ny : 400;      \\number of grid points on y-axis
+nm : 1000;      \\number of grid points for membrane shape equations
+startx : 0.0e-9;        \\start position of x-axis
+endx : 10.0e-9;        \\end position of x-axis
+starty : 0.0e-9;        \\start position of y-axis
+endy : 10.0e-9;        \\end position of y-axis
+angle : 0.000000001;    \\wrapping angle
+sig : 0.0;      \\Membrane reduced surface tension
+kappa : 50.0;   \\Membrane bending modulus
+thickness : 4.5e-9;     \\Membrane thickness (bilayer)
+pthickness : 0.5e-9;    \\Particle functionalized area
+hgthickness : 1.0e-9;   \\Membrane Headgroup thickness
+radius : 10e-9; \\Particle radius
+qp : 3000;      \\Total charge on NP
+epi : 1;        \\permittivity of inner area of NP
+epo : 1;       \\permittivity of functionalized area of NP
+ewu : 80.0;     \\permittivity of outer solution
+ewb : 80.0;     \\permittivity of inner solution
+emt : 1.0;      \\permittivity of tail group
+emhu : 1.0;     \\permittivity of outer headgroup
+emhb : 1.0;     \\permittivity of inner headgroup
+drepeat : 20; \\smoothening of dielectric constant
+qrepeat : 2;   \\smoothening of charge density
+prepeat : 4;    \\smoothening of potential0
+nbkup : 0;      \\number of ions in outer solution
+zbkup1 : 1;     \\Valence charge of outer solution ions
+zbkup2 : -1;    \\Valence charge of outer solution ions
+cbkup1 : 0;  \\Concentration (in mol/L) of outer solution ions
+cbkup2 : 0;  \\Concentration (in mol/L) of outer solution ions
+nbkbt : 0;      \\number of ions in inner solution
+zbkbt1 : 1;     \\Valence charge of inner solution ions
+zbkbt2 : -1;    \\Valence charge of inner solution ions
+cbkbt1 : 0;  \\Concentration (in mol/L) of inner solution ions
+cbkbt2 : 0;  \\Concentration (in mol/L) of inner solution ions
+nmemb : 2;      \\number of ions in inner headgroup
+zmemb1 : 1;     \\Valence charge of inner headgroup ions
+zmemb2 : -1;    \\Valence charge of inner headgroup ions
+zmemb3 : -1;    \\Valence charge of inner headgroup ions
+cmemb1 : 0.25;   \\Concentration (in mol/L) of inner solution ions
+cmemb2 : 0.05;  \\Concentration (in mol/L) of inner solution ions
+cmemb3 : 0.05;  \\Concentration (in mol/L) of inner solution ions
+cmembM1 : 22.9897; \\mass (in mol/L) of inner solution ions
+cmembM2 : 35.453; \\mass (in mol/L) of inner solution ions
+nmemu : 2;      \\number of ions in outer headgroup
+zmemu1 : 1;     \\Valence charge of outer headgroup ions
+zmemu2 : -1;    \\Valence charge of outer headgroup ions
+zmemu3 : -1;    \\Valence charge of outer headgroup ions
+cmemu1 : 0.25;   \\Concentration (in mol/L) of inner solution ions
+cmemu2 : 0.05;  \\Concentration (in mol/L) of inner solution ions
+cmemu3 : 0.05;  \\Concentration (in mol/L) of inner solution ions
+cmemuM1 : 22.9897;  \\mass (in mol/L) of inner solution ions
+cmemuM2 : 35.4530;  \\mass (in mol/L) of inner solution ions
+T : 310;        \\Temperature in Kelvin
+id0 : 0;        \\grid points ID for region in particle inner area
+id1 : 1;        \\grid points ID for region in particle functionalized area
+id2 : 2;        \\grid points ID for region in outer solution
+id3 : 3;        \\grid points ID for region in inner solution
+id4 : 4;        \\grid points ID for region in outer headgroup
+id5 : 5;        \\grid points ID for region in tail group
+id6 : 6;        \\grid points ID for region in inner headgroup
+id7 : 7;        \\grid points ID for region in tail group **NOT implemented**
+isMem : 1;      \\if 1 membrane is included, if 0 membrane is removed
+isNP : 0;       \\if 0 no NP, if 1 with NP, if 2 to run an extra run to find self energy of the membrane
+isPlot : 1;     \\if 0 no plotting of data, if 1 will plot data using pngcairo terminal, if 2 to plot with eps terminal and output as pdf files *has issues and take too much time*
+isFd2d : 0;     \\if 0 no solving of Ax=b system and so no potential, if 1 will solve Ax=b and will have potential
+memfactor : 1.0;    \\ a factor to multiply by the membrane height from reference(membrane start at z=0)
+memshift : 0e-9;  \\shift of mem from particle
+parshift : 2;   \\particle will be shifted from (0,0) endy/parshift
+isclean : 0;    \\if 0 no cleaning will happen, if 1 remove data files of area, dielectric, charge
+pot2d : 1;      \\if 0 will not get 2D potential in both r and z from 3D potential, if 1 will generate 2D files, if 2 will remove Pot.dat file after generating r and z files
